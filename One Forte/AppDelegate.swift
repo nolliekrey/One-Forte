@@ -13,10 +13,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var userDefaults: NSUserDefaults?
+    var currentUser: CurrentUser?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        userDefaults = NSUserDefaults.init()
+        currentUser = CurrentUser(userDefaults: userDefaults!)
         return true
     }
 
