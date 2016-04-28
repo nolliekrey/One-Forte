@@ -16,23 +16,32 @@ class Tweet {
     static let kFavorites = "favorite_count"
     static let kUser = "user"
     
-    // var user: Tweep
     let id: Int
     let text: String
     let retweets: Int
     let favorites: Int
-    let user: Tweep
     
-    init(jsonDictionary: [String:AnyObject]) {
-        id = jsonDictionary[Tweet.kId] as! Int
-        text = jsonDictionary[Tweet.kText] as! String
-        retweets = jsonDictionary[Tweet.kRetweets] as! Int
-        favorites = jsonDictionary[Tweet.kFavorites] as! Int
+    // Tweep is optional in case of parsing error
+    let user: Tweep?
+    
+    init?(jsonDictionary: [String:AnyObject]) {
+        guard let
+        id = jsonDictionary[Tweet.kId] as? Int,
+        text = jsonDictionary[Tweet.kText] as? String,
+        retweets = jsonDictionary[Tweet.kRetweets] as? Int,
+            favorites = jsonDictionary[Tweet.kFavorites] as? Int else {
+                self.id = -1
+                self.text = ""
+                self.favorites = -1
+                self.user = nil
+                return nil
+        }
+        self.id = id
+        self.text = text
+        self.retweets = retweets
+        self.favorites = favorites
         user = Tweep(jsonDictionary: jsonDictionary[Tweet.kUser] as! [String:AnyObject])
-        
     }
-    
-    
 }
 
 class Retweet: Tweet {

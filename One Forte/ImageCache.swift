@@ -13,7 +13,7 @@ class ImageCache {
     
     var totalBytes = 0
     
-    var urlToImage = [String:UIImage]()
+    private var urlToImage = [String:UIImage]()
     
     func dump() {
         urlToImage.removeAll()

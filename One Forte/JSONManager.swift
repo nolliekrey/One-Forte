@@ -29,7 +29,7 @@ class JSONManager {
             guard let rawTweet = jsonDictionary as? [String:AnyObject] else {
                 continue
             }
-            tweets.append(Tweet(jsonDictionary: rawTweet))
+            tweets.append(Tweet(jsonDictionary: rawTweet)!)
         }
         
         // save JSON

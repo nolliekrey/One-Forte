@@ -20,11 +20,22 @@ class Tweep {
     let screenName: String
     let httpsImageURL: String
     
-    init(jsonDictionary: [String:AnyObject]) {
-        userId = jsonDictionary[Tweep.kId] as! Int
-        name = jsonDictionary[Tweep.kName] as! String
-        screenName = jsonDictionary[Tweep.kScreenName] as! String
-        httpsImageURL = jsonDictionary[Tweep.kHTTPSimageURL] as! String
+    init?(jsonDictionary: [String:AnyObject]) {
+        guard let
+            userId = jsonDictionary[Tweep.kId] as? Int,
+            name = jsonDictionary[Tweep.kName] as? String,
+            screenName = jsonDictionary[Tweep.kScreenName] as? String,
+            httpsImageURL = jsonDictionary[Tweep.kHTTPSimageURL] as? String else {
+                self.httpsImageURL = ""
+                self.name = ""
+                self.screenName = ""
+                self.userId = -1
+                return nil
+        }
+        self.userId = userId
+        self.name = name
+        self.screenName = screenName
+        self.httpsImageURL = httpsImageURL
     }
 }
 

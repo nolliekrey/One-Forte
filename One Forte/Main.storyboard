@@ -20,11 +20,11 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CTn-bx-kld" id="Dz5-K3-BRX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="147.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h75-E0-CSm">
-                                            <rect key="frame" x="568.5" y="3" width="23.5" height="18.5"/>
+                                            <rect key="frame" x="569" y="3" width="23" height="19"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="23.5" id="MCT-x5-h7Z"/>
                                             </constraints>
@@ -39,7 +39,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiE-Mg-9UZ">
-                                            <rect key="frame" x="186" y="3" width="42" height="20.5"/>
+                                            <rect key="frame" x="186" y="3" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how456789012345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yef-nr-b5e">
-                                            <rect key="frame" x="64" y="8" width="107" height="13.5"/>
+                                            <rect key="frame" x="64" y="8" width="107" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="107" id="tdA-gj-beE"/>
                                             </constraints>
@@ -95,7 +95,7 @@
                                 <rect key="frame" x="0.0" y="240" width="600" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xuh-6e-D29" id="YBg-Yu-jaX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="147.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJX-AE-XWs">

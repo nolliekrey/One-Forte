@@ -48,6 +48,7 @@ class OFTimelineViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         if appDelegate.currentUser == nil {
             self.askForAccessAndUserId()
             
@@ -178,26 +179,28 @@ class OFTimelineViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-//        if indexPath.row%2 == 1 {
-            
-            let cell = tableView.dequeueReusableCellWithIdentifier("OFTweetTableViewCell_id") as! OFTweetTableViewCell
-            let tweet = self.timeline!.tweets[indexPath.row]
-            
-            cell.tweepHandleLabel.text = "@" + tweet.user.screenName
-            cell.tweepNameLabel.text = tweet.user.name
-            cell.tweetBodyLabel.text = tweet.text
-            let urlString = tweet.user.httpsImageURL
-            cell.tweepImageView.image = self.imageCache[urlString]
-            if (cell.tweepImageView.image == nil) {
-                self.imageCache.fetchImage(urlString, completionHandler: { (success) -> Void in
-                    if (success) {
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-                        })
-                    }
-                })
-            }
+        //        if indexPath.row%2 == 1 {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("OFTweetTableViewCell_id") as! OFTweetTableViewCell
+        let tweet = self.timeline!.tweets[indexPath.row]
+        
+        cell.tweepHandleLabel.text = "@" + (tweet.user?.screenName)!
+        cell.tweepNameLabel.text = tweet.user?.name
+        cell.tweetBodyLabel.text = tweet.text
+        guard let urlString = tweet.user?.httpsImageURL else {
             return cell
+        }
+        cell.tweepImageView.image = self.imageCache[urlString]
+        if (cell.tweepImageView.image == nil) {
+            self.imageCache.fetchImage(urlString, completionHandler: { (success) -> Void in
+                if (success) {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                    })
+                }
+            })
+        }
+        return cell
 //        } else {
 //            let cell = tableView.dequeueReusableCellWithIdentifier("OFStackTweetTableViewCell_id") as! OFStackTweetTableViewCell
 //            let tweet = self.timeline!.tweets[indexPath.row]
