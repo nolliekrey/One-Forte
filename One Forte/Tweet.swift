@@ -31,7 +31,7 @@ class Tweet {
         retweets = jsonDictionary[Tweet.kRetweets] as? Int,
             favorites = jsonDictionary[Tweet.kFavorites] as? Int else {
                 self.id = -1
-                self.text = ""
+                self.text = "SATAN"
                 self.favorites = -1
                 self.user = nil
                 return nil

@@ -72,7 +72,5 @@ class ImageCache {
             print("Image size total: \(self.totalBytes) bytes")
             
         }
-        
-        
     }
 }

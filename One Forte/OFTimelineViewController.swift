@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  OFTimelineViewController.swift
 //  One Forte
 //
 //  Created by Jon Whitmore on 2/7/16.
@@ -149,6 +149,7 @@ class OFTimelineViewController: UITableViewController {
                 do {
                     let timelineJson = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as! NSArray
                     print("\(timelineJson.count) articles fetched")
+                    print("\(timelineJson)")
                     self.timeline!.includeJson(timelineJson)
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -183,11 +184,20 @@ class OFTimelineViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("OFTweetTableViewCell_id") as! OFTweetTableViewCell
         let tweet = self.timeline!.tweets[indexPath.row]
+        //print("\(tweet.text) + \(tweet.user?.screenName)")
         
         cell.tweepHandleLabel.text = "@" + (tweet.user?.screenName)!
         cell.tweepNameLabel.text = tweet.user?.name
         cell.tweetBodyLabel.text = tweet.text
-        guard let urlString = tweet.user?.httpsImageURL else {
+        
+        let rc = UITapGestureRecognizer(target: self, action: #selector(OFTimelineViewController.profileTapped(_:)))
+        rc.numberOfTapsRequired = 1
+        rc.numberOfTouchesRequired = 1
+        cell.tweepImageView.tag = indexPath.row
+        cell.tweepImageView.gestureRecognizers = [UIGestureRecognizer]()
+        cell.tweepImageView.addGestureRecognizer(rc)
+        
+        guard let urlString = tweet.user?.profileImageURL else {
             return cell
         }
         cell.tweepImageView.image = self.imageCache[urlString]
@@ -201,27 +211,23 @@ class OFTimelineViewController: UITableViewController {
             })
         }
         return cell
-//        } else {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("OFStackTweetTableViewCell_id") as! OFStackTweetTableViewCell
-//            let tweet = self.timeline!.tweets[indexPath.row]
-//            cell.tweepHandleLabel.text = "@" + tweet.user.screenName
-//            cell.tweepUsernameLabel.text = tweet.user.name
-//            cell.tweetBodyLabel.text = tweet.text
-//            let urlString = tweet.user.httpsImageURL
-//            cell.tweepImageView.image = self.imageCache[urlString]
-//            if (cell.tweepImageView.image == nil) {
-//                self.imageCache.fetchImage(urlString, completionHandler: { (success) -> Void in
-//                    if (success) {
-//                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-//                        })
-//                    }
-//                })
-//            }
-//            
-//            return cell
-//        }
+    }
+    
+    func profileTapped(recognizer: UITapGestureRecognizer) {
+        guard let imageView = recognizer.view as? UIImageView else {
+            return
+        }
+        let index = imageView.tag
+        let tweet = self.timeline!.tweets[index]
+        guard let tweep = tweet.user else {
+            return
+        }
         
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let profileViewController = mainStoryboard.instantiateViewControllerWithIdentifier("OFProfileViewController_id") as? OFProfileViewController {
+            profileViewController.tweep = tweep;
+            self.navigationController?.pushViewController(profileViewController, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

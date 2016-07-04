@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D145D081CF21B63008EE753 /* OFProfileHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145D071CF21B63008EE753 /* OFProfileHeaderViewCell.swift */; };
+		8D2EB2D21CF2416F0085D62A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2EB2D11CF2416F0085D62A /* Extensions.swift */; };
 		8D9687271C6BD67900C421BB /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9687261C6BD67900C421BB /* Timeline.swift */; };
 		8D96872C1C6BD79A00C421BB /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D96872B1C6BD79A00C421BB /* Tweet.swift */; };
 		8D96872E1C6BF7A600C421BB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D96872D1C6BF7A600C421BB /* ImageCache.swift */; };
@@ -20,6 +22,7 @@
 		8DACF86F1C67D9AE000FE3F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DACF86E1C67D9AE000FE3F3 /* Main.storyboard */; };
 		8DACF8711C6995EB000FE3F3 /* Tweep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACF8701C6995EB000FE3F3 /* Tweep.swift */; };
 		8DDA86EB1C7120C3009259D3 /* OFStackTweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDA86EA1C7120C3009259D3 /* OFStackTweetTableViewCell.swift */; };
+		8DEEDE1B1CE1644C00F65D30 /* OFProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEEDE1A1CE1644C00F65D30 /* OFProfileViewController.swift */; };
 		8DFA2CA21C6A662A00636300 /* OFTweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA2CA11C6A662A00636300 /* OFTweetTableViewCell.swift */; };
 		8DFA2CA41C6A6D0A00636300 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA2CA31C6A6D0A00636300 /* JSONManager.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D145D071CF21B63008EE753 /* OFProfileHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFProfileHeaderViewCell.swift; sourceTree = "<group>"; };
+		8D2EB2D11CF2416F0085D62A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8D9687261C6BD67900C421BB /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		8D96872B1C6BD79A00C421BB /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		8D96872D1C6BF7A600C421BB /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		8DACF86E1C67D9AE000FE3F3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8DACF8701C6995EB000FE3F3 /* Tweep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweep.swift; sourceTree = "<group>"; };
 		8DDA86EA1C7120C3009259D3 /* OFStackTweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFStackTweetTableViewCell.swift; sourceTree = "<group>"; };
+		8DEEDE1A1CE1644C00F65D30 /* OFProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFProfileViewController.swift; sourceTree = "<group>"; };
 		8DFA2CA11C6A662A00636300 /* OFTweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFTweetTableViewCell.swift; sourceTree = "<group>"; };
 		8DFA2CA31C6A6D0A00636300 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D2EB2D01CF2415C0085D62A /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D2EB2D11CF2416F0085D62A /* Extensions.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		8D9687281C6BD6B300C421BB /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +121,7 @@
 			children = (
 				8DFA2CA11C6A662A00636300 /* OFTweetTableViewCell.swift */,
 				8DDA86EA1C7120C3009259D3 /* OFStackTweetTableViewCell.swift */,
+				8D145D071CF21B63008EE753 /* OFProfileHeaderViewCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -115,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8DACF8341C67CE41000FE3F3 /* OFTimelineViewController.swift */,
+				8DEEDE1A1CE1644C00F65D30 /* OFProfileViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -142,6 +158,7 @@
 		8DACF8311C67CE41000FE3F3 /* One Forte */ = {
 			isa = PBXGroup;
 			children = (
+				8D2EB2D01CF2415C0085D62A /* extensions */,
 				8D96872A1C6BD6F500C421BB /* controller */,
 				8D9687281C6BD6B300C421BB /* model */,
 				8D9687291C6BD6E200C421BB /* view */,
@@ -308,11 +325,14 @@
 				8DFA2CA21C6A662A00636300 /* OFTweetTableViewCell.swift in Sources */,
 				8DFA2CA41C6A6D0A00636300 /* JSONManager.swift in Sources */,
 				8DDA86EB1C7120C3009259D3 /* OFStackTweetTableViewCell.swift in Sources */,
+				8DEEDE1B1CE1644C00F65D30 /* OFProfileViewController.swift in Sources */,
 				8D96872E1C6BF7A600C421BB /* ImageCache.swift in Sources */,
 				8DACF8351C67CE41000FE3F3 /* OFTimelineViewController.swift in Sources */,
 				8DACF8331C67CE41000FE3F3 /* AppDelegate.swift in Sources */,
+				8D2EB2D21CF2416F0085D62A /* Extensions.swift in Sources */,
 				8DACF83B1C67CE41000FE3F3 /* One_Forte.xcdatamodeld in Sources */,
 				8DACF8711C6995EB000FE3F3 /* Tweep.swift in Sources */,
+				8D145D081CF21B63008EE753 /* OFProfileHeaderViewCell.swift in Sources */,
 				8D96872C1C6BD79A00C421BB /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
